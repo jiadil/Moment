@@ -1,0 +1,49 @@
+<% layout("layouts/template")%>
+
+<form action="/moment" method="POST" novalidate class="validated-form" enctype="multipart/form-data">
+    <div class="container-fluid">
+        <div class="mb-3 col-md-6 offset-md-3">
+            <legend class="text-center mt-5">New Moment</legend>
+            <div class="mb-3">
+                <label for="title" class="form-label">Event</label>
+                <input type="text" class="form-control" id="title" name="campground[title]" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+            
+            <div class="mb-3">
+                <label for="location" class="form-label">Location</label>
+                <input type="text" class="form-control" id="location" name="campground[location]"" requried>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+            
+            <!-- <div class="input-group mb-3">
+                <span class="input-group-text" id="price">$</span>
+                <input type="number" class="form-control" placeholder="0.00" aria-label="price" aria-describedby="price" id="price"
+                    name="campground[price]" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div> -->
+            
+            <div class="input-group mb-3">
+                <span class="input-group-text">Description</span>
+                <textarea class="form-control" aria-label="With textarea" name="campground[description]"></textarea>
+            </div>
+            
+            
+            <div class="custom-file">
+                <input type="file" class="custom-file-input" id="customFile" name="image" multiple>
+                <label class="custom-file-label" for="customFile">Add Images</label>
+            </div>
+            
+            
+            <div class="col text-center">
+                <button type="submit" class="btn btn-primary mt-5">Add Moment</button>
+            </div>
+        </div>
+    </div>
+</form>

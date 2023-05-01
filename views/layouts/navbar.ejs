@@ -1,0 +1,36 @@
+<nav class="navbar navbar-expand-md navbar-light bg-dark sticky-top">
+    <div class="container-fluid">
+        <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="/moment">All Moments</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="/moment/new">New Moment</a>
+                </li>
+            </ul>
+        </div>
+        <div class="mx-auto order-0">
+            <a class="navbar-brand mx-auto text-light" href="/">Home</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+        <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+            <ul class="navbar-nav ml-auto">
+                <% if(!currentUser) {%>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="/register">Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="/login">Login</a>
+                    </li>
+                <% } else {%>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="/logout">Logout</a>
+                    </li>
+                <% } %>
+            </ul>
+        </div>
+    </div>
+</nav>

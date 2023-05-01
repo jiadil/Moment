@@ -1,0 +1,32 @@
+<% layout('layouts/template')%>
+<form action="/register" method="POST" class="validated-form" novalidate>
+    <div class="container-fluid">
+        <div class="mb-3 col-md-6 offset-md-3">
+            <legend class="text-center mt-5">Register</legend>
+            <div class="mb-3">
+                <label class="form-label" for="username">Username</label>
+                <input class="form-control" type="text" id="username" name="username" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="email">Email</label>
+                <input class="form-control" type="email" id="email" name="email" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+            <div class="mb-5">
+                <label class="form-label" for="password">Password</label>
+                <input class="form-control" type="password" id="password" name="password" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+            <div class="col text-center">
+                <button class="btn btn-success">Register</button>
+            </div>   
+        </div>
+    </div>
+</form>

@@ -1,0 +1,70 @@
+<% layout("layouts/template")%>
+<form action="/moment/<%=cgedit._id%>?_method=PUT" method="POST" novalidate class="validated-form" enctype="multipart/form-data">
+    <div class="container-fluid">
+        <div class="mb-3 col-md-6 offset-md-3">
+            <legend class=" text-center mt-5">Edit Moment</legend>
+            <div class="mb-3">
+                <label for="title" class="form-label">Title</label>
+                <input type="text" class="form-control" id="title" name="campground[title]" value="<%=cgedit.title%>"
+                    required>
+                <!-- name: campground ==> data -->
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+            
+            <div class="mb-3">
+                <label for="location" class="form-label">Location</label>
+                <input type="text" class="form-control" id="location" name="campground[location]"
+                    value="<%=cgedit.location%>" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+
+            <!-- <div class="input-group mb-3">
+                <span class="input-group-text" id="price">$</span>
+                <input type="number" class="form-control" aria-label="price" aria-describedby="price" id="price"
+                    value="<%=cgedit.price%>" name="campground[price]" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div> -->
+
+            <div class="input-group mb-3">
+                <span class="input-group-text">Description</span>
+                <textarea class="form-control" style="height: 100px" aria-label="With textarea"
+                    name="campground[description]"><%=cgedit.description%></textarea>
+            </div>
+
+            <div class="custom-file mb-3">
+                <input type="file" class="custom-file-input" id="customFile" name="image" multiple>
+                <label class="custom-file-label" for="customFile">Add New Images</label>
+            </div>
+
+           
+            <div class="row row-cols-2 row-cols-md-3 rows-cols-lg-4">
+                <% cgedit.images.forEach(function(img, i) { %>
+                    <div class="col mb-4">
+                    <div class="card">
+                        <img src="<%=img.thumbnail%>" class="img-thumbnail card-img-top" alt="">
+                        <div class="card-body">
+                            <div class="form-check-inline">
+                                <input type="checkbox" id="image-<%=i%>" name="deleteImages[]" value="<%=img.filename%>">
+                            </div>
+                            <label for="image-<%=i%>">Delete?</label>
+                        </div>
+                    </div>
+                    </div>
+                <% })%>  
+            </div>
+                
+            
+
+            <div class="col text-center">
+                <button type="submit" class="btn btn-primary mt-5">Update Moment</button>
+                <a href="/moment/<%=cgedit._id%>" type="button" class="btn btn-primary mt-5">Go Back</a>
+            </div>
+        </div>
+    </div>
+</form>
